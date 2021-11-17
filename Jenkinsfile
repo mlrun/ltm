@@ -3,7 +3,7 @@ import com.iguazio.pipelinex.DockerRepo
 
 workDir = '/home/jenkins'
 podLabel = 'mlrun-ltm'
-def ltm_mlrun_output = ''
+//def ltm_mlrun_output = ''
 
 properties_args = [
     parameters([
@@ -30,8 +30,9 @@ podTemplate(
                     stage("git clone") {
                         checkout scm
                         println("Test LTM pipeline")
-                        ltm_mlrun_output = sh(script: "./ltm_mlrun_command.bsh ${params.user_name}", returnStdout: true).trim()
-                        writeFile(file: "ltm_mlrun_output.txt", text: ltm_mlrun_output)
+                        //ltm_mlrun_output =
+                        sh(script: "./ltm_mlrun_command.bsh ${params.user_name}", returnStdout: true)
+                        //writeFile(file: "ltm_mlrun_output.txt", text: ltm_mlrun_output)
                     }
                }
             }
