@@ -7,7 +7,7 @@ podLabel = 'mlrun-ltm'
 
 properties_args = [
     parameters([
-        string(defaultValue: 'Hedi Ingber', description: 'user name', name: 'user_name', trim: true),
+        string(defaultValue: 'Hedi Ingber', description: 'user input', name: 'user_input'),
     ]),
 ]
 
@@ -31,9 +31,9 @@ podTemplate(
                         checkout scm
                         }
 
-                    stage("build  pipeline for ${params.user_name}") {
+                    stage("build  pipeline for ${params.user_input}") {
                         println("Test LTM pipeline")
-                        println(common.shellc("export USER_NAME=${params.user_name}; ltm_mlrun_command.bsh $USER_NAME"))
+                        println(common.shellc("export USER_INPUT=${params.user_input}; ltm_mlrun_command.bsh $USER_INPUT"))
                     }
 
                }
