@@ -1,6 +1,4 @@
-#!/usr/bin/bash
-set -ex
 
 user_name="$1"
 
-echo "Your name is: " $user_name
+echo "Your name is: ${user_name}"

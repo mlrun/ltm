@@ -7,7 +7,7 @@ podLabel = 'mlrun-ltm'
 
 properties_args = [
     parameters([
-        string(defaultValue: 'Hedi Ingber', description: 'user name', name: 'user_name', trim: true)
+        string(defaultValue: 'Hedi Ingber', description: 'user name', name: 'user_name', trim: true),
     ]),
 ]
 
