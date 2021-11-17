@@ -33,7 +33,7 @@ podTemplate(
 
                     stage("build  pipeline for ${params.user_name}") {
                         println("Test LTM pipeline")
-                        println(common.shellc("USER_NAME=${params.user_name}; ltm_mlrun_command.bsh $USER_NAME"))
+                        println(common.shellc("export USER_NAME=${params.user_name}; ltm_mlrun_command.bsh $USER_NAME"))
                     }
 
                }
