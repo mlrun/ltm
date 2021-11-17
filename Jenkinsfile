@@ -13,7 +13,7 @@ properties([
 podTemplate(
     label: podLabel,
     containers: [
-        containerTemplate(name: 'base-build', image: 'iguazioci/alpine-base-build:ae7e534841e68675d15f4bd98f07197aed5591af', workingDir: workDir, ttyEnabled: true, command: 'cat'),
+        containerTemplate(name: 'base-build', image: 'busybox', workingDir: workDir, ttyEnabled: true, command: 'cat'),
         //containerTemplate(name: 'base-build', image: 'iguazioci/alpine-base-build:ae7e534841e68675d15f4bd98f07197aed5591af', workingDir: workDir, ttyEnabled: true, command: 'cat'),
     ],
     volumes: [
