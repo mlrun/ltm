@@ -5,11 +5,11 @@ workDir = '/home/jenkins'
 podLabel = 'mlrun-ltm'
 //def ltm_mlrun_output = ''
 
-properties_args = [
+properties([
     parameters([
         string(defaultValue: 'Hedi Ingber', description: 'user input', name: 'user_input'),
-    ]),
-]
+    ])
+])
 
 podTemplate(
     label: podLabel,
@@ -31,9 +31,9 @@ podTemplate(
                         checkout scm
                         }
 
-                    stage("build  pipeline for ${params.user_input}") {
+                    stage("build  pipeline for ${env.user_input}") {
                         println("Test LTM pipeline")
-                        println(common.shellc("export USER_INPUT=${params.user_input}; ltm_mlrun_command.bsh $USER_INPUT"))
+                        println(common.shellc("export USER_INPUT=${env.user_input}; ltm_mlrun_command.bsh $USER_INPUT"))
                     }
 
                }
