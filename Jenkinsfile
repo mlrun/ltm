@@ -29,12 +29,13 @@ podTemplate(
                 container('base-build') {
                     stage("git clone") {
                         checkout scm
+                        }
+
+                    stage("build  pipeline for ${params.user_name}") {
                         println("Test LTM pipeline")
-                        //ltm_mlrun_output =
-                        //sh(script: "./ltm_mlrun_command.bsh ${params.user_name}", returnStdout: true)
-                        sh('ltm_mlrun_command.bsh ${params.user_name}')
-                        //writeFile(file: "ltm_mlrun_output.txt", text: ltm_mlrun_output)
+                        println(common.shellc("USER_NAME=${params.user_name}; ltm_mlrun_command.bsh $USER_NAME"))
                     }
+
                }
             }
         }
