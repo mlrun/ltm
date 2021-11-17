@@ -32,7 +32,7 @@ podTemplate(
 
                     stage("build  pipeline for ${env.user_input}") {
                         println("Test LTM pipeline")
-                        println(common.shellc("export USER_INPUT=${env.user_input}; ltm_mlrun_command.bsh $USER_INPUT"))
+                        println(common.shellc("export USER_INPUT=${env.user_input}; echo $USER_INPUT"))
                     }
 
                }
