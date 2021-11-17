@@ -3,7 +3,6 @@ import com.iguazio.pipelinex.DockerRepo
 
 workDir = '/home/jenkins'
 podLabel = 'mlrun-ltm'
-//def ltm_mlrun_output = ''
 
 properties([
     parameters([
