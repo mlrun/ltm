@@ -33,10 +33,8 @@ podTemplate(
                     stage("build  pipeline for ${env.user_input}") {
                         println("Test LTM pipeline for ${env.user_input}")
                         script {
-                               def user_output = sh(script: "echo ${env.user_input}", returnStdout: true).trim()
-                               println("user_output = ${user_output}")
+                                 println(common.shellc("echo ${env.user_input}"))
                               }
-
                     }
 
                }
