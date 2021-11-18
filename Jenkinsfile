@@ -14,7 +14,6 @@ podTemplate(
     label: podLabel,
     containers: [
         containerTemplate(name: 'base-build', image: 'busybox', workingDir: workDir, ttyEnabled: true, command: 'cat'),
-        //containerTemplate(name: 'base-build', image: 'iguazioci/alpine-base-build:ae7e534841e68675d15f4bd98f07197aed5591af', workingDir: workDir, ttyEnabled: true, command: 'cat'),
     ],
     volumes: [
         hostPathVolume(mountPath: '/var/run/docker.sock', hostPath: '/var/run/docker.sock'),
@@ -34,8 +33,8 @@ podTemplate(
                     stage("build  pipeline for ${env.user_input}") {
                         println("Test LTM pipeline for ${env.user_input}")
                         script {
-                                 common.shell(['bash', 'echo', '${env.user_input}'])
-                              }
+                                  sh('echo ${env.user_input}')
+                               }
                     }
 
                }
